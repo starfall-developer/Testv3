@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090414"><meta name="description" content="Starfall — games, anime, and manga.">
+<title>Starfall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="app-shell">
+<aside class="sidebar">
+<a class="brand" href="#home"><span class="brand-mark">✦</span><span>starfall</span></a>
+<div class="side-label">DISCOVER</div>
+<nav class="nav-list" aria-label="Main navigation">
+<button class="nav-item active" data-page="home"><span>⌂</span> Home</button>
+<button class="nav-item" data-page="games"><span>▣</span> Games <i>NEW</i></button>
+<button class="nav-item" data-page="anime"><span>▶</span> Anime</button>
+<button class="nav-item" data-page="manga"><span>▤</span> Manga</button>
+<button class="nav-item" data-page="favorites"><span>♡</span> Favorites</button>
+</nav>
+<div class="sidebar-bottom"><div class="mini-orbit">✦</div><p>Games, anime<br><b>and manga.</b></p><span class="version">STARFALL</span></div>
+</aside>
+<main class="main-content">
+<header class="topbar">
+<button class="mobile-brand" data-page="home">✦ starfall</button>
+<div class="breadcrumbs"><span>UNIVERSE</span><b>/</b><strong id="crumb">Home</strong></div>
+<div class="top-actions"><label class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search games, anime, manga..." autocomplete="off"><kbd>⌘ K</kbd></label><button class="avatar" title="Guest profile">G</button></div>
+</header>
+<section class="page active-page" id="page-home">
+<div class="hero starfall-hero">
+<div class="hero-copy">
+<div class="eyebrow"><span class="live-dot"></span> GAMES • ANIME • MANGA</div>
+<h1 class="starfall-wordmark">Starfall is <span id="hero-changing-word">wonderful</span><i>✦</i></h1>
+<p>Your corner of the internet. Find a game, put on a show, and stay awhile.</p>
+<div class="hero-buttons"><button class="primary-btn" data-page="games">Start Playing <span>↗</span></button><button class="ghost-btn" data-page="anime">Anime</button><button class="ghost-btn" data-page="manga">Manga</button></div>
+</div>
+<div class="hero-art" aria-hidden="true"><div class="shooting-star"></div><div class="spark spark-a">✦</div><div class="spark spark-b">✧</div><div class="spark spark-c">·</div></div>
+</div>
+<div class="quick-stats">
+<div><span class="stat-icon">▣</span><span><b>Games</b><small>Play something</small></span><button data-page="games">↗</button></div>
+<div><span class="stat-icon">▶</span><span><b>Anime</b><small>Watch something</small></span><button data-page="anime">↗</button></div>
+<div><span class="stat-icon">▤</span><span><b>Manga</b><small>Read something</small></span><button data-page="manga">↗</button></div>
+</div>
+<section class="content-section"><div class="section-heading"><div><div class="eyebrow">YOUR LIBRARY</div><h2>Recently added</h2></div><button class="text-link" data-page="games">Browse <span>→</span></button></div><div class="feature-grid" id="home-feature-grid"></div></section>
+</section>
+<section class="page" id="page-games"><div class="page-heading"><div class="eyebrow">THE ARCADE IS OPEN</div><h1>Play <em>something.</em></h1><p>Browse games or add your own HTML files.</p></div><div class="toolbar"><div class="filter-pills" data-filter-group="games"><button class="pill selected" data-filter="all">All games</button><button class="pill" data-filter="action">Action</button><button class="pill" data-filter="arcade">Arcade</button><button class="pill" data-filter="puzzle">Puzzle</button></div><button class="outline-btn" id="add-game">＋ Add a game</button></div><div class="card-grid" id="games-grid"></div></section>
+<section class="page" id="page-anime"><div class="page-heading"><div class="eyebrow">YOUR ANIME UNIVERSE</div><h1>Stay for the <em>story.</em></h1><p>Your anime links, all in one place.</p></div><div class="toolbar"><div class="filter-pills" data-filter-group="anime"><button class="pill selected" data-filter="all">All anime</button><button class="pill" data-filter="action">Action</button><button class="pill" data-filter="fantasy">Fantasy</button><button class="pill" data-filter="slice">Slice of life</button></div><button class="outline-btn" id="add-anime">＋ Add anime</button></div><div class="card-grid" id="anime-grid"></div></section>
+<section class="page" id="page-manga"><div class="page-heading"><div class="eyebrow">ONE MORE CHAPTER</div><h1>Read beyond <em>the stars.</em></h1><p>Save manga links and pick up where you left off.</p></div><div class="toolbar"><div class="filter-pills" data-filter-group="manga"><button class="pill selected" data-filter="all">All manga</button><button class="pill" data-filter="action">Action</button><button class="pill" data-filter="fantasy">Fantasy</button><button class="pill" data-filter="drama">Drama</button></div><button class="outline-btn" id="add-manga">＋ Add manga</button></div><div class="card-grid" id="manga-grid"></div></section>
+<section class="page" id="page-favorites"><div class="page-heading"><div class="eyebrow">SAVED TO YOUR UNIVERSE</div><h1>Your <em>favorites.</em></h1><p>Stuff you saved.</p></div><div class="card-grid" id="favorites-grid"></div></section>
+<footer><span>✦ STARFALL</span><span>Games • Anime • Manga</span><a href="README.md">Setup guide</a></footer>
+</main></div>
+<dialog id="player-dialog" class="modal player-modal"><div class="modal-head"><div><span class="eyebrow">NOW PLAYING</span><h3 id="player-title">Game</h3></div><button class="icon-btn" data-close="player-dialog">✕</button></div><div class="player-frame-wrap"><iframe id="player-frame" title="Starfall player" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write" allowfullscreen></iframe></div><div class="modal-foot"><span>Some games may block embedding. Use the open-in-new-tab button if needed.</span><button class="outline-btn" id="open-external">↗ Open separately</button></div></dialog>
+<dialog id="reader-dialog" class="modal reader-modal"><div class="modal-head"><div><span class="eyebrow">STARFALL LIBRARY</span><h3 id="reader-title">Read / Watch</h3></div><button class="icon-btn" data-close="reader-dialog">✕</button></div><div id="reader-content" class="reader-content"></div></dialog>
+<dialog id="add-dialog" class="modal form-modal"><div class="modal-head"><div><span class="eyebrow">GROW YOUR UNIVERSE</span><h3 id="form-title">Add to Starfall</h3></div><button class="icon-btn" data-close="add-dialog">✕</button></div><form id="add-form"><input type="hidden" id="item-type"><label>Title<input id="item-title" required maxlength="70" placeholder="e.g. My cool game"></label><label>Content URL<input id="item-url" required type="text" placeholder="https://... or /games/my-game/index.html"></label><label>Cover image URL <span>(optional)</span><input id="item-cover" type="url" placeholder="https://...jpg"></label><label>Category<select id="item-category"><option value="action">Action</option><option value="arcade">Arcade</option><option value="puzzle">Puzzle</option><option value="fantasy">Fantasy</option><option value="slice">Slice of life</option><option value="drama">Drama</option></select></label><p class="form-hint">Your entries are saved in this browser. For public listings, add them to <code>catalog.json</code> before deploying.</p><button class="primary-btn full-btn" type="submit">Add to my library <span>✦</span></button></form></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>

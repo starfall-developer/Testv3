@@ -1,0 +1,13 @@
+{
+  "games": [
+    {"id":"demo-neon-dash","title":"Neon Dash","category":"arcade","description":"A fast-paced arcade run.","url":"/games/neon-dash/index.html","cover":"","type":"game"},
+    {"id":"demo-star-puzzle","title":"Star Puzzle","category":"puzzle","description":"A little brain teaser between adventures.","url":"/games/star-puzzle/index.html","cover":"","type":"game"},
+    {"id":"demo-shadow-quest","title":"Shadow Quest","category":"action","description":"Explore a mysterious world.","url":"/games/shadow-quest/index.html","cover":"","type":"game"}
+  ],
+  "anime": [
+    {"id":"anime-sample","title":"Add your first anime","category":"fantasy","description":"Add an episode or video URL to start your library.","url":"https://example.com/your-video.mp4","cover":"","type":"anime"}
+  ],
+  "manga": [
+    {"id":"manga-sample","title":"Add your first manga","category":"drama","description":"Add a chapter URL or reader page.","url":"https://example.com/your-chapter","cover":"","type":"manga"}
+  ]
+}
